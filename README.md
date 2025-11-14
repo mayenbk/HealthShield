@@ -8,6 +8,8 @@ Explore how hashing, encryption and audit logs could help protect health related
 
 ## Versions
 
-- v0.1 – Basic Streamlit app, loads one synthetic patient record from JSON.
-- v0.2 – Added password hashing demo (SHA-256) to show how raw passwords should not be stored.
+- v0.1 Basic Streamlit app, loads one synthetic patient record from JSON.
+- v0.2 Added password hashing demo (SHA-256) to show how raw passwords should not be stored.
+- v0.3 Added Fernet-based encryption/decryption demo for a synthetic patient summary.
+
 
