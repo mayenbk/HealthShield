@@ -1,4 +1,7 @@
 # HealthShield
+
+> **Live demo:** https://healthshield.streamlit.app/
+
 Simple healthcare data security demo (hashing, encryption, audit log) built with **Streamlit and Python**.
 
 **Goal:** 
