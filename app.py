@@ -6,6 +6,10 @@ from cryptography.fernet import Fernet
 
 
 st.set_page_config(page_title="HealthShield • v0.1", layout="centered")
+st.warning(
+    "HealthShield is a demo only. Do NOT use it with real patient data. "
+    "It is for learning and illustration purposes."
+)
 
 st.title("HealthShield: Healthcare Data Security Demo (v0.1)")
 st.caption("Synthetic demo • Not for clinical use")
