@@ -5,7 +5,7 @@ from cryptography.fernet import Fernet
 
 
 
-st.set_page_config(page_title="HealthShield • v0.1", layout="centered")
+st.set_page_config(page_title="HealthShield", layout="centered")
 st.warning(
     "HealthShield is a demo only. Do NOT use it with real patient data. "
     "It is for learning and illustration purposes."
@@ -27,7 +27,7 @@ try:
     st.json(patient)
 except FileNotFoundError:
     st.error("test_patient.json not found. Please check the data/ folder.")
-st.subheader("Password Hashing Demo (v0.2)")
+st.subheader("Password Hashing Demo")
 
 st.write(
     "This simple demo shows how we never store raw passwords. "
@@ -45,7 +45,7 @@ if password_input:
 else:
     st.caption("Type a demo password above to see its hash.")
 
-st.subheader("Encryption Demo (v0.3)")
+st.subheader("Encryption Demo")
 
 st.write(
     "Here we show how a simple symmetric key can encrypt and decrypt a small record. "
@@ -75,7 +75,7 @@ st.code(decrypted)
 
 st.info("In reality, the key would not be regenerated on each run and would never be exposed in the app.")
 
-st.subheader("Minimal Info View (v0.5)")
+st.subheader("Minimal Info View")
 
 st.write(
     "Real systems often use data minimisation: show only what is necessary. "
@@ -93,7 +93,7 @@ except Exception:
 st.json(minimal_view)
 st.caption("No name or internal ID: this is safer to show in some contexts.")
 
-st.subheader("Audit Log (v0.4)")
+st.subheader("Audit Log")
 
 if "audit_log" not in st.session_state:
     st.session_state.audit_log = []
@@ -105,7 +105,7 @@ st.session_state.audit_log.append(
 
 st.write(f"Audit log entries this session: {len(st.session_state.audit_log)}")
 st.json(st.session_state.audit_log[-5:])
-st.subheader("Suspicious Behaviour Demo (v0.6)")
+st.subheader("Suspicious Behaviour Demo")
 
 if "decrypt_attempts" not in st.session_state:
     st.session_state.decrypt_attempts = 0
