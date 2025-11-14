@@ -20,6 +20,36 @@ Explore how hashing, encryption and audit logs could help protect health related
 - v0.7 Added security warning banner and Security Notes section.
 
 ---
+
+## What It Demonstrates
+
+### 1. Password Hashing
+- User types a **demo password**  
+- App shows a **SHA-256 hash**  
+- Explains why systems should store the hash, not the raw password  
+
+### 2. Encryption / Decryption
+- Builds a short summary from the fake patient record  
+- Encrypts it with **Fernet**  
+- Decrypts it back to plain text  
+- Highlights that keys should be handled more safely in real systems  
+
+### 3. Audit Logging
+- Uses `st.session_state` to append log events  
+- Shows a small JSON list of “events” for that session  
+- Illustrates the idea of tracking access behaviour  
+
+### 4. Data Minimisation
+- Renders a **minimal view** of the record: age + diagnosis only  
+- No name, no internal ID  
+- This is closer to what some safer UIs might show by default  
+
+### 5. Suspicious Behaviour Alert
+- Tracks a counter for “decrypt attempts”  
+- After 3 attempts, shows a warning: “Suspicious behaviour detected”  
+- Demonstrates the idea of basic anomaly detection (rule-based)
+---
+
 ## Security Notes
 
 HealthShield is a **demo**, not a production security system.
@@ -46,6 +76,14 @@ Real healthcare systems would need:
 - Key management (HSMs, key vaults)  
 - Encrypted databases and backups  
 - Regulatory and compliance reviews (e.g. NHS, GDPR)
+
+---
+
+## Installation & Run
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
 
 
 
