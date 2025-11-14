@@ -1,6 +1,8 @@
 import streamlit as st
 import json
 import hashlib
+from cryptography.fernet import Fernet
+
 
 
 st.set_page_config(page_title="HealthShield • v0.1", layout="centered")
@@ -38,3 +40,33 @@ if password_input:
     st.info("In a real system, only the hash is stored, not the password itself.")
 else:
     st.caption("Type a demo password above to see its hash.")
+
+st.subheader("Encryption Demo (v0.3)")
+
+st.write(
+    "Here we show how a simple symmetric key can encrypt and decrypt a small record. "
+    "This is a demo, not production crypto."
+)
+
+# In a real system the key would be stored securely (e.g. environment variable or key vault)
+key = Fernet.generate_key()
+cipher = Fernet(key)
+
+# Build a small string from our fake patient record
+try:
+    patient_summary = f"ID={patient['patient_id']}, Dx={patient['diagnosis']}, Age={patient['age']}"
+except Exception:
+    patient_summary = "ID=P-001, Dx=Hypertension, Age=45"
+
+st.write("Original (plaintext) summary:")
+st.code(patient_summary)
+
+encrypted = cipher.encrypt(patient_summary.encode())
+st.write("Encrypted:")
+st.code(encrypted)
+
+decrypted = cipher.decrypt(encrypted).decode()
+st.write("Decrypted again:")
+st.code(decrypted)
+
+st.info("In reality, the key would not be regenerated on each run and would never be exposed in the app.")
