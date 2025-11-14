@@ -70,6 +70,25 @@ st.write("Decrypted again:")
 st.code(decrypted)
 
 st.info("In reality, the key would not be regenerated on each run and would never be exposed in the app.")
+
+st.subheader("Minimal Info View (v0.5)")
+
+st.write(
+    "Real systems often use data minimisation: show only what is necessary. "
+    "Here we show a minimal, non-identifying view of the record."
+)
+
+try:
+    minimal_view = {
+        "age": patient["age"],
+        "diagnosis": patient["diagnosis"]
+    }
+except Exception:
+    minimal_view = {"age": 45, "diagnosis": "Hypertension"}
+
+st.json(minimal_view)
+st.caption("No name or internal ID: this is safer to show in some contexts.")
+
 st.subheader("Audit Log (v0.4)")
 
 if "audit_log" not in st.session_state:
