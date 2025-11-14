@@ -13,6 +13,8 @@ Explore how hashing, encryption and audit logs could help protect health related
 - v0.3 Added Fernet-based encryption/decryption demo for a synthetic patient summary.
 - v0.4 Added simple in-memory audit log using Streamlit session_state.
 - v0.5 Added minimal non-identifying view (data minimisation).
+- v0.6 Added suspicious behaviour demo based on multiple decrypt attempts.
+
 
 
 
