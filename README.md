@@ -14,6 +14,19 @@ Explore how hashing, encryption and audit logs could help protect health related
 - v0.4 Added simple in-memory audit log using Streamlit session_state.
 - v0.5 Added minimal non-identifying view (data minimisation).
 - v0.6 Added suspicious behaviour demo based on multiple decrypt attempts.
+- v0.7 Added security warning banner and Security Notes section.
+
+---
+## Security Notes
+
+HealthShield is a **demo**, not a production security system.
+
+- Uses synthetic, fake patient data only  
+- Hashing and encryption are simplified for teaching purposes  
+- Keys and secrets are not stored the way a real system would  
+- Do NOT connect this to real hospital systems or patient records
+
+
 
 
 
