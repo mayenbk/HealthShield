@@ -26,6 +26,24 @@ HealthShield is a **demo**, not a production security system.
 - Keys and secrets are not stored the way a real system would  
 - Do NOT connect this to real hospital systems or patient records
 
+---
+
+## Limitations & Threat Model
+
+This project is designed to **start conversations**, not replace real security work.
+
+Some simplified assumptions:
+- Single “demo user” that has no real authentication or identity management  
+- Keys are generated in-memory for each demo run and are not persisted securely  
+- No database, no network calls and all logic is in memory for teaching  
+- No real logging infrastructure or SIEM connection  
+
+Real healthcare systems would need:
+- Strong authentication and authorisation  
+- Key management (HSMs, key vaults)  
+- Encrypted databases and backups  
+- Regulatory and compliance reviews (e.g. NHS, GDPR)
+
 
 
 
