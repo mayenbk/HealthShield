@@ -11,7 +11,7 @@ st.warning(
     "It is for learning and illustration purposes."
 )
 
-st.title("HealthShield: Healthcare Data Security Demo (v0.1)")
+st.title("HealthShield: Healthcare Data Security Demo")
 st.caption("Synthetic demo • Not for clinical use")
 
 st.subheader("Welcome")
