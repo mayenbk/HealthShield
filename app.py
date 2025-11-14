@@ -101,3 +101,19 @@ st.session_state.audit_log.append(
 
 st.write(f"Audit log entries this session: {len(st.session_state.audit_log)}")
 st.json(st.session_state.audit_log[-5:])
+st.subheader("Suspicious Behaviour Demo (v0.6)")
+
+if "decrypt_attempts" not in st.session_state:
+    st.session_state.decrypt_attempts = 0
+
+if st.button("Simulate decrypt attempt"):
+    st.session_state.decrypt_attempts += 1
+
+attempts = st.session_state.decrypt_attempts
+st.write(f"Decrypt attempts this session: {attempts}")
+
+if attempts >= 3:
+    st.error("Suspicious behaviour detected: too many decrypt attempts.")
+else:
+    st.info("Normal activity.")
+
