@@ -1,5 +1,7 @@
 import streamlit as st
 import json
+import hashlib
+
 
 st.set_page_config(page_title="HealthShield • v0.1", layout="centered")
 
@@ -19,3 +21,20 @@ try:
     st.json(patient)
 except FileNotFoundError:
     st.error("test_patient.json not found. Please check the data/ folder.")
+st.subheader("Password Hashing Demo (v0.2)")
+
+st.write(
+    "This simple demo shows how we never store raw passwords. "
+    "Instead, we store a hash."
+)
+
+password_input = st.text_input("Enter a demo password", type="password")
+
+if password_input:
+    hash_obj = hashlib.sha256(password_input.encode())
+    hex_digest = hash_obj.hexdigest()
+    st.write("Hashed password (SHA-256, hex):")
+    st.code(hex_digest)
+    st.info("In a real system, only the hash is stored, not the password itself.")
+else:
+    st.caption("Type a demo password above to see its hash.")
