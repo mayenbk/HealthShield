@@ -52,7 +52,7 @@ st.write(
 key = Fernet.generate_key()
 cipher = Fernet(key)
 
-# Build a small string from our fake patient record
+# Build a small string from our fake test patient record
 try:
     patient_summary = f"ID={patient['patient_id']}, Dx={patient['diagnosis']}, Age={patient['age']}"
 except Exception:
@@ -70,3 +70,15 @@ st.write("Decrypted again:")
 st.code(decrypted)
 
 st.info("In reality, the key would not be regenerated on each run and would never be exposed in the app.")
+st.subheader("Audit Log (v0.4)")
+
+if "audit_log" not in st.session_state:
+    st.session_state.audit_log = []
+
+# Log that the user has visited the page
+st.session_state.audit_log.append(
+    {"event": "view_page", "section": "main", "user": "demo-user"}
+)
+
+st.write(f"Audit log entries this session: {len(st.session_state.audit_log)}")
+st.json(st.session_state.audit_log[-5:])
