@@ -1,5 +1,11 @@
 # HealthShield
 
+**Exploratory Data Security & Responsible Data Handling**
+
+**Scope Statement — Responsible Data Handling Exploration**  
+HealthShield is an exploratory project that demonstrates foundational approaches to handling sensitive information in digital systems. It focuses on encryption, hashing, and audit-style techniques to illustrate how basic protective mechanisms can be applied responsibly in context. This repository is intended for learning and demonstration, not production deployment or compliance certification.
+
+
 > **Live demo:** https://healthshield.streamlit.app/
 
 Simple healthcare data security demo (hashing, encryption, audit log) built with **Streamlit and Python**.
